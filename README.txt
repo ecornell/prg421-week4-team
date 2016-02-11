@@ -27,4 +27,5 @@ Dependent libraries: lib/derby.jar
 
 --
 
-To Run: java -cp ./lib/derby.jar:./out/production/Team-Project-Wk4 Main
+To Run - Windows : java -cp ./lib/derby.jar;./out/production/Team-Project-Wk4 Main
+To Run - OSX     : java -cp ./lib/derby.jar:./out/production/Team-Project-Wk4 Main
