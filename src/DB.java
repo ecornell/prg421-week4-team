@@ -1,3 +1,10 @@
+/**
+ * Title:          Week 4 - Program Improvement III
+ * Author:         Team B : ( Elijah Cornell / Eric Landeis / Gordon Doskas / James Rippon /
+ *                            Joseph Hart / Keith Green / Lance Branford )
+ * Creation Date:  2016-02-11
+ * Class:          PRG/421 - Roland Morales
+ */
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

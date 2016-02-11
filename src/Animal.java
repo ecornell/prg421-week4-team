@@ -1,16 +1,12 @@
-/*
- The program should allow a user to do the following:
-Add, edit, delete different types of animals
-Select an animal, and the corresponding characteristics will be displayed (such as color, vertebrate or invertebrate, can swim, etc.)
-The program must use ArrayList(s) to work with these animal objects.
+/**
+ * Title:          Week 4 - Program Improvement III
+ * Author:         Team B : ( Elijah Cornell / Eric Landeis / Gordon Doskas / James Rippon /
+ *                            Joseph Hart / Keith Green / Lance Branford )
+ * Creation Date:  2016-02-11
+ * Class:          PRG/421 - Roland Morales
  */
-
 import java.util.Scanner;
 
-/**
- *
- * @author Eric
- */
 public class Animal { // animal class creation
     private String name = "";
     private boolean skeletonPresent;
@@ -27,7 +23,6 @@ public class Animal { // animal class creation
         this.sound = "Sound";
         this.habitat = "Habitat";
         this.color = "Color";
-        
     }
 
     public Animal(String name, boolean skeletonPresent, String sound, String habitat, String color){
@@ -90,12 +85,7 @@ public class Animal { // animal class creation
         System.out.printf("%-15s | %-10s | %-10s | %-10s | %-15s\n", name, skeletonPresent, sound, habitat,color);
     }
 
-    public Animal addAnimalSetAll(String name, boolean skeletonPresent, String sound, String habitat, String color){
-        Animal tempAnimal = new Animal(name, skeletonPresent, sound, habitat, color);
-        return tempAnimal;
-    }
-    
-    public Animal addAnimal(){ // add animal method
+    public Animal addAnimal() { // add animal method
        
         Animal tempAnimal = new Animal(); // temporary animal object using default contructor then assign individual attributes
                 

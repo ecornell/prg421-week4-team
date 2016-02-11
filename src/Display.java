@@ -1,10 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Title:          Week 4 - Program Improvement III
+ * Author:         Team B : ( Elijah Cornell / Eric Landeis / Gordon Doskas / James Rippon /
+ *                            Joseph Hart / Keith Green / Lance Branford )
+ * Creation Date:  2016-02-11
+ * Class:          PRG/421 - Roland Morales
  */
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -64,8 +64,8 @@ public class Display {
     
     public void displayArrayList(List<Animal> list){ // takes animal arraylist and generates list based off of names
         for(int i = 0; i < list.size(); i++){
-            System.out.println((i + 1) + ". " + list.get(i).getName() + "\n");
+            System.out.print((i + 1) + ". " + list.get(i).getName() + "\n");
         }
-        System.out.println("Choice: ");
+        System.out.print("Choice: ");
     }
 }

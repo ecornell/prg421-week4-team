@@ -1,16 +1,13 @@
-/*
- The program should allow a user to do the following:
-Add, edit, delete different types of animals
-Select an animal, and the corresponding characteristics will be displayed (such as color, vertebrate or invertebrate, can swim, etc.)
-The program must use ArrayList(s) to work with these animal objects.
+/**
+ * Title:          Week 4 - Program Improvement III
+ * Author:         Team B : ( Elijah Cornell / Eric Landeis / Gordon Doskas / James Rippon /
+ *                            Joseph Hart / Keith Green / Lance Branford )
+ * Creation Date:  2016-02-11
+ * Class:          PRG/421 - Roland Morales
  */
-
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * @author Eric
- */
 public class Main {
 
     private static DB db = DB.getInstance();
@@ -21,13 +18,9 @@ public class Main {
      */
     public static void main(String[] args) throws Exception {
 
-
         try {
 
             db.initDB();
-
-            //
-
 
             //
 
@@ -41,12 +34,12 @@ public class Main {
 
                 menuSelection = menuDisplay.selectionProcess(5); //initialize display to display main menu (manual entry of number of choices for man menu required...fix later to have display class handle automatically)
 
+                System.out.print("\n");
+
                 List<Animal> animalList = db.readAllAnimals();
 
                 switch (menuSelection) {
                     case 1:
-
-                        System.out.print("\n\n");
                         System.out.printf("%-15s | %-10s | %-10s | %-10s | %-15s\n",
                                 "Name", "Skeleton", "Sound", "Habitat", "Color");
                         System.out.println("--------------------------------------------------------------------------");
@@ -55,7 +48,6 @@ public class Main {
                             anAnimalList.printAnimal();
                         }
 
-                        System.out.print("\n\n");
                         break;
 
                     case 2:
@@ -77,7 +69,7 @@ public class Main {
                         Display.editPrompt(); // display list of attributes to edit
                         int selectedAttribute = Integer.parseInt(keyboard.nextLine());
                         if (selectedAttribute == 1) {
-                            System.out.println("Change name to:");
+                            System.out.print("Change name to: ");
                             animalList.get(selectedEditAnimal).setName(keyboard.nextLine()); // edit name
                         } else if (selectedAttribute == 2) { // no user option since boolean is a binary choice, just inverting previous entry
                             if (animalList.get(selectedEditAnimal).getSkeletonPresent()) {
@@ -85,15 +77,15 @@ public class Main {
                             } else {
                                 animalList.get(selectedEditAnimal).setSkeletonPresent(true);
                             }
-                            System.out.println("Skeleton has been set to " + animalList.get(selectedEditAnimal).getSkeletonPresent()); // display change so that user knows change was made
+                            System.out.print("Skeleton has been set to " + animalList.get(selectedEditAnimal).getSkeletonPresent()); // display change so that user knows change was made
                         } else if (selectedAttribute == 3) { // edit sound
-                            System.out.println("Change sound to:");
+                            System.out.print("Change sound to: ");
                             animalList.get(selectedEditAnimal).setSound(keyboard.nextLine());
                         } else if (selectedAttribute == 4) { // edit habitat
-                            System.out.println("Change habitat to:");
+                            System.out.print("Change habitat to: ");
                             animalList.get(selectedEditAnimal).setHabitat(keyboard.nextLine());
                         } else if (selectedAttribute == 5) { // edit color
-                            System.out.println("Change color to:");
+                            System.out.print("Change color to: ");
                             animalList.get(selectedEditAnimal).setColor(keyboard.nextLine());
                         } else {
                             System.out.println("Error in Edit Selection");
@@ -103,7 +95,6 @@ public class Main {
                         break;
 
                     case 5:
-//                        System.out.println("case 5\n");  //exit display loop ending program
                         exitCase = true;
                         break;
 
@@ -111,9 +102,15 @@ public class Main {
                         System.out.println("****SOMETHING WENT WRONG SOMEWHERE****"); // shouldn't ever happen....
                         break;
                 }
+
+                System.out.print("\n");
+
             }
+
         } finally {
+
             db.close();
+
         }
     }
 }
