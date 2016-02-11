@@ -5,6 +5,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -15,7 +16,7 @@ public class Display {
     Scanner keyboard = new Scanner(System.in);
     
     public static void mainPrompt (){ // main menu display .. fix later to pull from enumerated attributes and build automatically
-        System.out.println("Main Menu\n"
+        System.out.print("Main Menu\n"
                          + "+++++++++\n"
                          + "1. Display animal list\n"
                          + "2. Add animal\n"
@@ -26,7 +27,7 @@ public class Display {
     }
 
     public static void editPrompt (){ // edit attribute display .. fix later to pull from enumerated attributes and build automatically
-    System.out.println("Edit Animal\n"
+    System.out.print("Edit Animal\n"
                      + "+++++++++\n"
                      + "1. Name\n"
                      + "2. Skeleton Present\n"
@@ -61,7 +62,7 @@ public class Display {
         return finalSelection; // returns validated selection
     }
     
-    public void displayArrayList(ArrayList<Animal> list){ // takes animal arraylist and generates list based off of names
+    public void displayArrayList(List<Animal> list){ // takes animal arraylist and generates list based off of names
         for(int i = 0; i < list.size(); i++){
             System.out.println((i + 1) + ". " + list.get(i).getName() + "\n");
         }

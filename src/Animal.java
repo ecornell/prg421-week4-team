@@ -17,6 +17,7 @@ public class Animal { // animal class creation
     private String sound;
     private String habitat;
     private String color;
+    private int id;
     
     Scanner keyboard = new Scanner(System.in);
     
@@ -76,10 +77,17 @@ public class Animal { // animal class creation
     public String getColor() { // retrieve color method
         return this.color;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
     public void printAnimal(){ // print delineated attributes....fix to display it more tabular format later
-        System.out.println(this.name + "\t::  " + this.skeletonPresent + "\t::  " +
-                this.sound + "\t::  " + this.habitat + "\t::  " + this.color);
+        System.out.printf("%-15s | %-10s | %-10s | %-10s | %-15s\n", name, skeletonPresent, sound, habitat,color);
     }
 
     public Animal addAnimalSetAll(String name, boolean skeletonPresent, String sound, String habitat, String color){
@@ -135,4 +143,6 @@ public class Animal { // animal class creation
         }
         return tempAnimal; //return "filled" animal object
     }
+
+
 }
