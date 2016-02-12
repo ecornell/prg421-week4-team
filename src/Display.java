@@ -14,15 +14,16 @@ import java.util.Scanner;
  */
 public class Display {
     Scanner keyboard = new Scanner(System.in);
-    
+
     public static void mainPrompt (){ // main menu display .. fix later to pull from enumerated attributes and build automatically
         System.out.print("Main Menu\n"
                          + "+++++++++\n"
                          + "1. Display animal list\n"
                          + "2. Add animal\n"
-                         + "3. Delete animal\n"
-                         + "4. Edit animal\n"
-                         + "5. Exit\n"
+                         + "3. Clone animal\n"
+                         + "4. Delete animal\n"
+                         + "5. Edit animal\n"
+                         + "6. Exit\n"
                          + "Choice: ");
     }
 
@@ -37,31 +38,31 @@ public class Display {
                      + "6. Back\n"
                      + "Choice: ");
     }
-        
+
     public int selectionProcess(int numChoices){ // takes input and validates against allowed options
-        
+
         int currentSelection;
         int finalSelection = 0;
-        
+
         Display.mainPrompt();
         currentSelection = Integer.parseInt(keyboard.nextLine());
-        
+
         if((currentSelection >= 1) && (currentSelection <= numChoices-1)){
             finalSelection = currentSelection;
         }
-        
+
         else if(currentSelection == numChoices){
             finalSelection = currentSelection;
         }
-        
+
         else{
             System.out.println("****INVALID SELECTION, PLEASE SELECT VALID OPTION****\n");
             finalSelection = selectionProcess(numChoices);
         }
-        
+
         return finalSelection; // returns validated selection
     }
-    
+
     public void displayArrayList(List<Animal> list){ // takes animal arraylist and generates list based off of names
         for(int i = 0; i < list.size(); i++){
             System.out.print((i + 1) + ". " + list.get(i).getName() + "\n");

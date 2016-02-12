@@ -14,9 +14,9 @@ public class Animal { // animal class creation
     private String habitat;
     private String color;
     private int id;
-    
+
     Scanner keyboard = new Scanner(System.in);
-    
+
     public Animal(){ // default constructor
         this.name = "Name";
         this.skeletonPresent = true;
@@ -30,17 +30,27 @@ public class Animal { // animal class creation
         this.skeletonPresent = skeletonPresent;
         this.sound = sound;
         this.habitat = habitat;
-        this.color = color;        
+        this.color = color;
+    }
+
+    public Animal(Animal animal) { // copy constructor
+        this(
+          "Clone of " + animal.getName(),
+          animal.getSkeletonPresent(),
+          animal.getSound(),
+          animal.getHabitat(),
+          animal.getColor()
+        );
     }
 
     public void setName(String name) { // assign name method
         this.name = name;
     }
-    
+
     public String getName() { // retrieve name method
         return this.name;
     }
-    
+
     public void setSkeletonPresent(boolean skeletonPresent) { // assign skeleton present method
           this.skeletonPresent = skeletonPresent;
     }
@@ -80,23 +90,23 @@ public class Animal { // animal class creation
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public void printAnimal(){ // print delineated attributes....fix to display it more tabular format later
         System.out.printf("%-15s | %-10s | %-10s | %-10s | %-15s\n", name, skeletonPresent, sound, habitat,color);
     }
 
     public Animal addAnimal() { // add animal method
-       
+
         Animal tempAnimal = new Animal(); // temporary animal object using default contructor then assign individual attributes
-                
-        try{ 
+
+        try{
             System.out.println("Enter the name of the animal: ");
             tempAnimal.setName(keyboard.nextLine());
         }
         catch(Exception e2){
             System.out.println("Incorrect Entry\n*******\n" + e2);
         }
-        
+
         try{
             System.out.println("Does the animal have a skeleton?\n"
                                 + "Enter 1 for yes or 0 for no:"); // get 1 or 0 entry and convert 1 to true and 0 to false for boolean attribute
