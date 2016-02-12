@@ -45,8 +45,8 @@ public class DB {
             List<Animal> animalList = new ArrayList<>();
             animalList.add(new Animal("Lion",true, "Roar", "Savannah", "Yellow"));
             animalList.add(new Animal("Tiger",true, "Roar", "Forest", "Orange"));
-            animalList.add(new Animal("Leech",true, "none", "Swamp", "Black"));
-            animalList.add(new Animal("Octopus",true, "none", "Ocean", "Multi-Chromatic"));
+            animalList.add(new Animal("Leech",false, "none", "Swamp", "Black"));
+            animalList.add(new Animal("Octopus",false, "none", "Ocean", "Multi-Chromatic"));
 
             for (Animal animal: animalList) {
                 insertAnimal(animal);
