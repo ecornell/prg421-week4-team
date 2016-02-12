@@ -15,6 +15,7 @@ Team Program Requirements:
 
 Team Improvements:
  - Animal data is persisted to a Derby database
+ - Added ability to clone animals
 
 The program is based on Eric Landeis's week 3 program.
 
@@ -26,6 +27,7 @@ Output: Console
 Dependent libraries: lib/derby.jar
 
 --
+To Compile outside IDE: javac -d ./out/production/Team-Project-Wk4 -cp ./lib/derby.jar -sourcepath ./src ./src/Main.java
 
 To Run - Windows : java -cp ./lib/derby.jar;./out/production/Team-Project-Wk4 Main
 To Run - OSX     : java -cp ./lib/derby.jar:./out/production/Team-Project-Wk4 Main
