@@ -16,6 +16,7 @@ Team Program Requirements:
 Team Improvements:
  - Animal data is persisted to a Derby database
  - Added ability to clone animals
+ - Added ability to breed animals
 
 The program is based on Eric Landeis's week 3 program.
 

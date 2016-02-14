@@ -21,9 +21,10 @@ public class Display {
                          + "1. Display animal list\n"
                          + "2. Add animal\n"
                          + "3. Clone animal\n"
-                         + "4. Delete animal\n"
-                         + "5. Edit animal\n"
-                         + "6. Exit\n"
+                         + "4. Breed animals\n"
+                         + "5. Delete animal\n"
+                         + "6. Edit animal\n"
+                         + "7. Exit\n"
                          + "Choice: ");
     }
 
@@ -67,6 +68,10 @@ public class Display {
         for(int i = 0; i < list.size(); i++){
             System.out.print((i + 1) + ". " + list.get(i).getName() + "\n");
         }
+        displayPrompt();
+    }
+    public void displayPrompt()
+    {
         System.out.print("Choice: ");
     }
 }

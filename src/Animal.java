@@ -6,6 +6,7 @@
  * Class:          PRG/421 - Roland Morales
  */
 import java.util.Scanner;
+import java.util.Random;
 
 public class Animal { // animal class creation
     private String name = "";
@@ -14,6 +15,8 @@ public class Animal { // animal class creation
     private String habitat;
     private String color;
     private int id;
+
+    private static Random rnd = new Random();
 
     Scanner keyboard = new Scanner(System.in);
 
@@ -40,6 +43,16 @@ public class Animal { // animal class creation
           animal.getSound(),
           animal.getHabitat(),
           animal.getColor()
+        );
+    }
+
+    public Animal(Animal animal1, Animal animal2) { // "breed" constructor
+        this(
+          animal1.getName().substring(0,animal1.getName().length() / 2) + animal2.getName().substring(animal2.getName().length() / 2, animal2.getName().length()),
+          rnd.nextBoolean() ? animal1.getSkeletonPresent() : animal2.getSkeletonPresent(),
+          rnd.nextBoolean() ? animal1.getSound() : animal2.getSound(),
+          rnd.nextBoolean() ? animal1.getHabitat() : animal2.getHabitat(),
+          rnd.nextBoolean() ? animal1.getColor() : animal2.getColor()
         );
     }
 
