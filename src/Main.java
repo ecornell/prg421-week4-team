@@ -32,7 +32,7 @@ public class Main {
 
             while (!exitCase) { // go until exit case is satisfied
 
-                menuSelection = menuDisplay.selectionProcess(6); //initialize display to display main menu (manual entry of number of choices for man menu required...fix later to have display class handle automatically)
+                menuSelection = menuDisplay.selectionProcess(7); //initialize display to display main menu (manual entry of number of choices for man menu required...fix later to have display class handle automatically)
 
                 System.out.print("\n");
 
@@ -63,13 +63,22 @@ public class Main {
                         break;
 
                     case 4:
+                        System.out.println("Select animals to breed"); // display animals in array and clone selected one
+                        menuDisplay.displayArrayList(animalList);
+                        int selectedBreedAnimal1 = Integer.parseInt(keyboard.nextLine()) - 1;
+                        menuDisplay.displayPrompt();
+                        int selectedBreedAnimal2 = Integer.parseInt(keyboard.nextLine()) - 1;
+                        db.insertAnimal(new Animal(animalList.get(selectedBreedAnimal1), animalList.get(selectedBreedAnimal2)));
+                        break;
+
+                    case 5:
                         System.out.println("Select animal to be deleted"); // display animals in array and remove selected one
                         menuDisplay.displayArrayList(animalList);
                         int selectedDeleteAnimal = Integer.parseInt(keyboard.nextLine()) - 1;
                         db.deleteAnimal(animalList.get(selectedDeleteAnimal));
                         break;
 
-                    case 5:
+                    case 6:
                         System.out.println("Select animal to be edited"); // display list of animals available for edit
                         menuDisplay.displayArrayList(animalList);
                         int selectedEditAnimal = Integer.parseInt(keyboard.nextLine()) - 1;
@@ -101,7 +110,7 @@ public class Main {
                         db.updateAnimal(animalList.get(selectedEditAnimal));
                         break;
 
-                    case 6:
+                    case 7:
                         exitCase = true;
                         break;
 
