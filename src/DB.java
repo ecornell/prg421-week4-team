@@ -40,7 +40,7 @@ public class DB {
 
             s.execute(createString);
 
-            //
+            /*
             
             List<Animal> animalList = new ArrayList<>();
             animalList.add(new Animal("Lion",true, "Roar", "Savannah", "Yellow"));
@@ -50,7 +50,7 @@ public class DB {
 
             for (Animal animal: animalList) {
                 insertAnimal(animal);
-            }
+            }*/
 
         } catch (SQLException e) {
 

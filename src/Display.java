@@ -5,6 +5,7 @@
  * Creation Date:  2016-02-11
  * Class:          PRG/421 - Roland Morales
  */
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,29 +16,48 @@ import java.util.Scanner;
 public class Display {
     Scanner keyboard = new Scanner(System.in);
 
-    public static void mainPrompt (){ // main menu display .. fix later to pull from enumerated attributes and build automatically
+    public int mainPrompt (){ // main menu display allows for automatic choice selection by returning number of choices
         System.out.print("Main Menu\n"
-                         + "+++++++++\n"
-                         + "1. Display animal list\n"
-                         + "2. Add animal\n"
-                         + "3. Clone animal\n"
-                         + "4. Breed animals\n"
-                         + "5. Delete animal\n"
-                         + "6. Edit animal\n"
-                         + "7. Exit\n"
-                         + "Choice: ");
+                         + "+++++++++\n");
+        
+        ArrayList<String> mainPromptList = new ArrayList<>();
+        
+        mainPromptList.add("Display animal(s)");
+        mainPromptList.add("Add animal");
+        mainPromptList.add("Clone animal");
+        mainPromptList.add("Breed animals");
+        mainPromptList.add("Delete animal");
+        mainPromptList.add("Edit animal");
+        mainPromptList.add("Exit");
+        
+        for(int i = 0; i < mainPromptList.size(); i++){
+            System.out.println((i + 1) + ". " + mainPromptList.get(i));
+        }
+        System.out.println("Choice:");
+   
+        return mainPromptList.size();
     }
 
-    public static void editPrompt (){ // edit attribute display .. fix later to pull from enumerated attributes and build automatically
-    System.out.print("Edit Animal\n"
-                     + "+++++++++\n"
-                     + "1. Name\n"
-                     + "2. Skeleton Present\n"
-                     + "3. Sound\n"
-                     + "4. Habitat\n"
-                     + "5. Color\n"
-                     + "6. Back\n"
-                     + "Choice: ");
+    public int editPrompt (){ // edit attribute display .. fix later to pull from enumerated attributes and build automatically
+        System.out.print("Edit Animal\n"
+                     + "+++++++++\n");
+
+        ArrayList<String> editPromptList = new ArrayList<>();
+
+        editPromptList.add("Edit name");
+        editPromptList.add("Edit skeleton present");
+        editPromptList.add("Edit sound");
+        editPromptList.add("Edit habitat");
+        editPromptList.add("Edit color");
+        editPromptList.add("Back");
+
+        for(int i = 0; i < editPromptList.size(); i++){
+            System.out.println((i + 1) + ". " + editPromptList.get(i));
+        }
+        System.out.println("Choice:");
+        
+        return editPromptList.size();
+
     }
 
     public int selectionProcess(int numChoices){ // takes input and validates against allowed options
@@ -45,7 +65,6 @@ public class Display {
         int currentSelection;
         int finalSelection = 0;
 
-        Display.mainPrompt();
         currentSelection = Integer.parseInt(keyboard.nextLine());
 
         if((currentSelection >= 1) && (currentSelection <= numChoices-1)){

@@ -32,7 +32,7 @@ public class Main {
 
             while (!exitCase) { // go until exit case is satisfied
 
-                menuSelection = menuDisplay.selectionProcess(7); //initialize display to display main menu (manual entry of number of choices for man menu required...fix later to have display class handle automatically)
+                menuSelection = menuDisplay.selectionProcess(menuDisplay.mainPrompt()); //initialize display to display main menu (manual entry of number of choices for man menu required...fix later to have display class handle automatically)
 
                 System.out.print("\n");
 
@@ -82,7 +82,7 @@ public class Main {
                         System.out.println("Select animal to be edited"); // display list of animals available for edit
                         menuDisplay.displayArrayList(animalList);
                         int selectedEditAnimal = Integer.parseInt(keyboard.nextLine()) - 1;
-                        Display.editPrompt(); // display list of attributes to edit
+                        menuDisplay.editPrompt(); // display list of attributes to edit
                         int selectedAttribute = Integer.parseInt(keyboard.nextLine());
                         if (selectedAttribute == 1) {
                             System.out.print("Change name to: ");
